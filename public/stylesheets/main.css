@@ -1,0 +1,48 @@
+#sort {
+	font-size: 0.9em;
+}
+
+#sort span, #sort li a, #sort li.active a {
+	padding: 2px;
+}
+
+#sort span {
+	display: block;
+	margin-right: 10px;
+	float: left;
+}
+
+a.delete { color: #CC0000; }
+h2 { margin-bottom: 20px;}
+
+form.form-horizontal label { width: 160px; float: left; }
+form.form-horizontal div.input { overflow: hidden; margin-bottom: 15px;}
+form.form-horizontal .help-block { font-style: italic; }
+
+main, section, article, header, aside, footer{
+	display: block;
+}
+.brand{
+	background: aliceblue;
+	font-family: 'Shadows Into Light', cursive;
+}
+.item {
+	display: block;
+	width: 600px;
+	border: 1px #1f6377 dotted;
+}
+img {
+	display: block;
+	width: 20px;
+	height: 20px;
+}
+footer{
+	text-align: center;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: medium;
+	background: honeydew;
+	height: 30px;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}

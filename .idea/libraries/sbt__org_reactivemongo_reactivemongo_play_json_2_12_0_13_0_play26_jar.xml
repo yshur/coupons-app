@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.reactivemongo:reactivemongo-play-json_2.12:0.13.0-play26:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.reactivemongo/reactivemongo-play-json_2.12/jars/reactivemongo-play-json_2.12-0.13.0-play26.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.reactivemongo/reactivemongo-play-json_2.12/srcs/reactivemongo-play-json_2.12-0.13.0-play26-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

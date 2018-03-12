@@ -1,0 +1,27 @@
+@import helper._
+
+@(id: Option[String], form: Form[models.Coupon], files: Option[List[(play.api.libs.json.JsString, reactivemongo.api.gridfs.ReadFile[reactivemongo.play.json.JSONSerializationPack.type, play.api.libs.json.JsString])]])(implicit r: RequestHeader, lang: play.api.i18n.Messages)
+
+@main("Coupons") {
+    <div class="row">
+        <div class="span8">
+            <h2>
+                @if(!id.isDefined) {
+                    Add
+                } else {
+                    Edit
+                } an coupon</h2>
+            @helper.form(action = helper.CSRF(if(!id.isDefined) routes.Coupons.create else routes.Coupons.edit(id.get)), 'class -> "form-horizontal") {
+                @helper.inputText(form("title"))
+                @helper.inputText(form("description"))
+                @helper.textarea(form("location"))
+                @helper.textarea(form("price"))
+                @helper.textarea(form("discount"))
+                @helper.textarea(form("image"))
+                <div class="form-actions">
+                    <input class="btn btn-primary" type="submit">
+                </div>
+            }
+        </div>
+
+}

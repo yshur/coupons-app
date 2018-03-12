@@ -1,0 +1,19 @@
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{10} - %msg [%thread]%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="play" level="WARN" />
+  <logger name="application" level="WARN" />
+  <logger name="reactivemongo" level="WARN" />
+  <logger name="reactivemongo-akka" level="WARN" />
+  <logger name="ch.qos.logback" level="WARN" />
+  
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

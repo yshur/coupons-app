@@ -1,0 +1,47 @@
+@import helper._
+
+@(coupons: List[models.Coupon], activeSort: String)(implicit r: RequestHeader)
+
+@main("Coupons") {
+    <div class="row">
+        <div class="span12">
+            <h2>Available coupons</h2>
+            <div id="sort">
+                <span>Sort by:</span>
+                <ul class="nav nav-pills">
+                    <li @if(activeSort == "title"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=title">title</a></li>
+                    <li @if(activeSort == "-title"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=-title">-title</a></li>
+                    <li @if(activeSort == "location"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=location">location</a></li>
+                    <li @if(activeSort == "-location"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=-location">-location</a></li>
+                    <li @if(activeSort == "price"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=price">price</a></li>
+                    <li @if(activeSort == "-price"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=-price">-price</a></li>
+                    <li @if(activeSort == "discount"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=discount">discount</a></li>
+                    <li @if(activeSort == "-discount"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=-discount">-discount</a></li>
+                    <li @if(activeSort == "creationDate"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=creationDate">creation</a></li>
+                    <li @if(activeSort == "-creationDate"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=-creationDate">-creation</a></li>
+                    <li @if(activeSort == "updateDate"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=updateDate">update</a></li>
+                    <li @if(activeSort == "-updateDate"){class="active"}><a href="@routes.Coupons.indexAdmin?sort=-updateDate">-update</a></li>
+                    <li @if(activeSort == "none"){class="active"}><a href="@routes.Coupons.indexAdmin">none</a></li>
+                </ul>
+            </div>
+            @if(coupons.isEmpty) {
+                <p>No coupons available yet.</p>
+            } else {
+                <ul>
+                @coupons.map { coupon =>
+                    <li class="item"><p><a href="@routes.Coupons.showEditForm(coupon.id.get)">@coupon.title - edit</a></p>
+                        <p><em>@coupon.description</em></p>
+                        <p>the price now is @coupon.price, and it on @coupon.discount discount now</p>
+                        <p>locate in @coupon.location</p>
+                        <p><img src="@coupon.image"></p>
+                        (last modified : @coupon.updateDate.map(u => org.joda.time.format.DateTimeFormat.forPattern("MMM dd, yyyy").print(u)).orElse(Some("n/a"))) - <a href="@helper.CSRF(routes.Coupons.delete(coupon.id.get))" class="delete">delete</a>
+                    </li><br><br>
+                }
+                </ul>
+            }
+            <div>
+                <a href="@routes.Coupons.showCreationForm" class="btn btn-primary">Create</a>
+            </div>
+        </div>
+    </div>
+}

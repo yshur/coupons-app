@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /admin                          controllers.Coupons.indexAdmin
+GET     /admin/coupons/new               controllers.Coupons.showCreationForm
+POST    /admin/coupons/new               controllers.Coupons.create
+GET     /admin/coupons/:id               controllers.Coupons.showEditForm(id)
+POST    /admin/coupons/:id               controllers.Coupons.edit(id)
+DELETE  /admin/coupons/:id               controllers.Coupons.delete(id)
+POST    /admin/coupons/:id/attachments   controllers.Coupons.saveAttachment(id)
+GET     /admin/attachments/:id            controllers.Coupons.getAttachment(id)
+DELETE  /admin/attachments/:id            controllers.Coupons.removeAttachment(id)
+
+GET     /                                 controllers.Coupons.index
+GET     /attachments/:id                controllers.Coupons.getAttachment(id)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
