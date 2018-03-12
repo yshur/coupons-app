@@ -3,7 +3,7 @@
   <component name="Play2ExcludedModulesSettings">
     <option name="INFO">
       <map>
-        <entry key="reactivemongo-demo-app-master">
+        <entry key="coupons-app">
           <value>
             <ProjectSettingsEntry>
               <option name="playDistrPath" value="$USER_HOME$/.ivy2/cache/com.typesafe.play/play_2.12/jars/play_2.12-2.6.7.jar" />
@@ -13,7 +13,7 @@
         <entry key="root">
           <value>
             <ProjectSettingsEntry>
-              <option name="confDir" value="C:\Users\yair\Desktop\reactivemongo-demo-app-master\app" />
+              <option name="confDir" value="C:\Users\yair\Desktop\coupons-app\app" />
               <option name="templateImports">
                 <list>
                   <option value="_root_.play.twirl.api.TwirlFeatureImports._" />
@@ -36,7 +36,7 @@
                   <option value="controllers.Assets.Asset" />
                 </list>
               </option>
-              <option name="uri" value="/C:/Users/yair/Desktop/reactivemongo-demo-app-master" />
+              <option name="uri" value="/C:/Users/yair/Desktop/coupons-app" />
             </ProjectSettingsEntry>
           </value>
         </entry>
