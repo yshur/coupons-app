@@ -33,7 +33,7 @@
                         <p><em>@coupon.description</em></p>
                         <p>the price now is @coupon.price, and it on @coupon.discount discount now</p>
                         <p>locate in @coupon.location</p>
-                        <p><img src="@routes.Assets.at(coupon.image)"></p>
+                        <p><img src="@coupon.image"></p>
                         <p>(last modified : @coupon.updateDate.map(u => org.joda.time.format.DateTimeFormat.forPattern("MMM dd, yyyy").print(u)).orElse(Some("n/a")))</p>
                     </li><br><br>
                 }
