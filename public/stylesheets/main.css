@@ -27,9 +27,13 @@ main, section, article, header, aside, footer{
 	font-family: 'Shadows Into Light', cursive;
 }
 .item {
-	display: block;
+	direction: rtl;
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
 	width: 600px;
 	border: 1px #1f6377 dotted;
+	float: left;
 }
 img {
 	display: block;
@@ -45,4 +49,5 @@ footer{
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
+	margin-top: 20px;
 }
